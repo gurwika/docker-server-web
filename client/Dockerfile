@@ -1,7 +1,7 @@
 FROM node
 
-# Install typescript
-RUN npm install -g typescript
+# Install http-server
+RUN npm install -g http-server
 
 # Create app directory
 WORKDIR /usr/app
@@ -20,9 +20,6 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-COPY .env.prod ./dist/
-COPY .env.example ./dist/
-WORKDIR ./dist
 
-EXPOSE 3005
-CMD NODE_ENV=prod node src/index.js
+EXPOSE 8005
+CMD http-server -p 8005 ./build

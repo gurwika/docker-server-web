@@ -1,12 +1,10 @@
 version: '3'
 services:
   server:
-    build: ./src/client
+    build: ./server
     ports:
       - '3005:3005'
   client:
-    build: ./src/server
+    build: ./client
     ports:
       - '8005:8005'
-    depends_on:
-      - server
