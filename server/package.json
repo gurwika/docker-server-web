@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "NODE_ENV=test nodemon src/index.ts",
+		"dev": "NODE_ENV=dev nodemon src/index.ts",
 		"build": "tsc -p ."
 	},
 	"repository": {
